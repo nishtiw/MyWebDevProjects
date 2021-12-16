@@ -1,1 +1,122 @@
 
+@import url('https://fonts.googleapis.com/css2?family=Jost&display=swap');
+
+*,
+* ::before,
+* ::after {
+    margin: 0;
+    padding: 0%;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 62.5%; 
+    /* 100%  = 16px 
+    62.5% = 10px  = 1rem*/
+    font-family: "Jost", sans-serif;
+}
+
+.main_div{
+    width: 100vw;
+    height: 100vh;
+    background-color: white;
+    display: grid;
+    place-items: center;
+}
+
+.music_container{
+    /* 1rem = 10px */
+    width: 35rem;
+    height: 55rem;
+    background-color: white;
+    border-radius: 2rem;
+    box-shadow: 0 1.2rem 3rem 0.5rem rgba(0, 0, 0, 0.2);
+    padding: 3rem;
+    text-align: center;
+}
+
+.music_container #title {
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+    word-spacing: 0.5rem;
+    color: black;
+    margin: 2rem 0 0.5rem 0;
+    font-size: 2.5rem;
+    font-weight: 500;
+    text-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.3);
+}
+
+.music_container #artist{
+    color: lightgray;
+    text-transform: capitalize;
+    letter-spacing: 0.1rem;
+    font-size: 2rem;
+    margin-bottom: 4rem;
+    font-weight: 300;
+}
+
+.img_container {
+    width: 25rem;
+    height: 25rem;
+    margin: auto; 
+}
+
+img {
+    /* make the img object fit in the circle */
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 1.2rem 3rem 0.5rem rgba(0, 0, 0, 0.4);
+    /* margin-bottom: 4rem; */
+}
+
+.music_controls {
+    width: 20rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: auto; /* to bring the buttons to the center of the page */
+    margin-top: 4rem;
+}
+
+.music_controls .fa {
+    color: black;
+    font-size: 2rem;
+    cursor: pointer; /* when you hover mouse pointer on buttons, their title will be displayed */
+    filter: drop-shadow(0 1.2rem 3rem 0.5rem rgba(0, 0, 0, 0.4)); /* we cannot use box-shadow property for svg/transparent images. So here we will use drop-shadow property of filter */ 
+}
+
+.music_controls .play_button {
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    background-color: black;
+    color: #f6f6f6;
+    /* add display flex to align the icons to center */
+    font-size: 1.4rem;
+    display: flex;
+    justify-content: center; /* triangle part of play button aligned center horizontally */ 
+    align-items: center; /* triangle part of play button aligned center vertically */
+}
+
+.music_controls .fa:hover {
+    color: gray;
+}
+
+.music_controls .fa-play:hover {
+    background-color: #f6f6f6;
+    color: black;
+    box-shadow: 0 1rem 2rem 0.2rem rgba(0, 0, 0, 0.4);
+}
+
+/* anime class to add animation */ 
+.anime{
+    animation: rotatePlayer 10s linear infinite; /* anime class to be added in a tag in such a way that it is applied only when play button is pressed */ 
+}
+
+/* following is to make the animation rotate from 0 to 360 deg in 3s (as mentioned above) */
+@keyframes rotatePlayer {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
