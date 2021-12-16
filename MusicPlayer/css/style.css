@@ -115,7 +115,7 @@ img {
     animation: rotatePlayer 10s linear infinite; /* anime class to be added in a tag in such a way that it is applied only when play button is pressed */ 
 }
 
-/* following is to make the animation rotate from 0 to 360 deg in 3s (as mentioned above) */
+/* following is to make the animation rotate from 0 to 360 deg in 10s (as mentioned above) */
 @keyframes rotatePlayer {
     from { transform: rotate(0deg); }
     to { transform: rotate(360deg); }
